@@ -1,8 +1,27 @@
 <%= render(partial: @posts) || render_hero_suggestion %>
-
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <style media="screen">
+      .company { float: left; width: 30%; margin: 1em 1.5%; text-decoration: none; }
+      .company span { display: inline-block; margin-top: 0.5em; color: gray; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+      .company img { width: 80%; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); filter: grayscale(100%); -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+      .company:hover img { -webkit-filter: grayscale(0); -moz-filter: grayscale(0); filter: grayscale(0); }
+      .company:hover span { color: blue; }
+      @media screen and (max-width: 600px) { .company { width: 47%; } }
+    </style>
+    <h2>Companies that React!</h2>
+    <!-- we'll throw a bunch of logos here -->
+    <div id="show-companies"></div>
+  </div>
+</div>
 <% content_for :sidebar do %>
   <div class="content-well p-x-2 p-y-2">
     <span><%= @settings.fetch('sidebar.cta_helper') %></span>
     <%= link_to 'New Post', new_post_path, class: "btn btn-block btn-large btn-info" %>
   </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :companies_that_react %>
 <% end %>
