@@ -43,8 +43,8 @@ If you're new to rails, follow this and come back http://installfest.railsbridge
 
 ```bash
 
-$ git clone git@github.com:blairanderson/rails-hackernews-reddit-producthunt-clone.git link-site
-$ cd link-site
+$ git clone git@github.com:blairanderson/open-source-job-board.git jobbr
+$ cd jobbr
 
 ```
 

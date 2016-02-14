@@ -1,0 +1,11 @@
+{
+  "name": "Open Source Job Board",
+  "description": "This app acts as a job board.",
+  "keywords": [
+    "rails",
+    "job board",
+    "open source"
+  ],
+  "website": "http://blairanderson.github.io/open-source-job-board",
+  "repository": "https://github.com/blairanderson/open-source-job-board",
+}
