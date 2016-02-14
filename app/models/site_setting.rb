@@ -1,7 +1,7 @@
 class SiteSetting
   attr_reader :data
   def initialize
-    @data = Setting.pluck(:name, :value).to_h.with_indifferent_access
+    @data = Setting.pluck(:name, :value).to_h.with_indifferent_access rescue {}
   end
 
   def fetch(key=false)
