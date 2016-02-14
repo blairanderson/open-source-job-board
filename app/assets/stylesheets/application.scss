@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bootstrap-custom";
+@import "utils";
+@import "progress-wizard";
+//@import "typeahead";
+
+body {
+  background-color: #f2f4f5;
+  margin-bottom: 60px; // height of footer nav
+}
+
+.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.navbar {min-height:32px !important}
+
+.nav-utility {
+  -webkit-box-shadow: inset 0px -1px 1px 1px rgba(153,153,153,1);
+  -moz-box-shadow: inset 0px -1px 1px 1px rgba(153,153,153,1);
+  box-shadow: inset 0px -1px 1px 1px rgba(153,153,153,1);
+}
+
+.content-well {
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  -o-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  -ms-box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  background: white;
+  padding: 40px;
+  margin-bottom: 27px;
+}
+
+$errorColor: #0072FF;
+.help-block {
+  display: block;
+  padding: 4px;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-top: -2px;
+  border: 1px solid $errorColor;
+  -webkit-box-shadow: 0px 0px 1px 1px $errorColor;
+  -moz-box-shadow: 0px 0px 1px 1px $errorColor;
+  box-shadow: 0px 0px 1px 1px $errorColor;
+}

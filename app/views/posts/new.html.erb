@@ -1,0 +1,33 @@
+<% content_for :sidebar do %>
+  <% if @post.company_logo %>
+    <div class="company-logo">
+      <%= image_tag(@post.company_logo, class: 'img-fluid') %>
+    </div>
+  <% end %>
+
+  <% if @posts_published.any? %>
+    <h3>Published:</h3>
+    <ul>
+      <% @post_published.each do |post| %>
+        <li><%= post.title %>(<%= link_to "archive" %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @posts_drafted.any? %>
+    <h3>Your Drafts:</h3>
+    <ul>
+      <% @posts_drafted.each do |post| %>
+        <li><%= post.title %>(<%= link_to "edit", edit_post_path(post) %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<% content_for :header do %>
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= render partial: "progress", locals: { current_step: :add } %>
+  </div>
+<% end %>
+
+<%= render 'form' %>

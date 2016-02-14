@@ -1,0 +1,49 @@
+<nav class="nav nav-utility">
+  <div class="container">
+    <ul class="nav navbar-nav pull-xs-right">
+      <% if current_user && current_user.is_admin? %>
+        <li class="nav-item">
+          <%= link_to "Admin Dashboard", RailsAdmin::Engine.routes.url_helpers.dashboard_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
+  </div>
+</nav>
+<div style="background: #05A5D1;padding: 50px 0;">
+  <h1 style="text-align: center;"><%= link_to site_title, root_path, style: "color: #FDF3E7;font-weight: 300;" %></h1>
+</div>
+<nav class="navbar navbar-full navbar-dark bg-inverse">
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+    &#9776;
+  </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-11">
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+          <%= link_to site_title, root_path, class: "navbar-brand" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<% if notice || alert %>
+  <div class="container">
+    <div class="col-xs-12">
+      <% if notice %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!-- <script src="https://cdn.rawgit.com/twitter/typeahead.js/588440f66559714280628a4f9799f0c4eb880a4a/dist/typeahead.bundle.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  console.log('setup typahead here with the search bar!')
+  window.postsJSON = <%= raw(Post.cached.to_json) %>;
+</script> -->

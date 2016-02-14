@@ -1,0 +1,32 @@
+<% content_for :sidebar do %>
+  <% if @post.company_logo %>
+    <div class="company-logo">
+      <%= image_tag(@post.company_logo, class: 'img-fluid') %>
+    </div>
+  <% end %>
+
+  <% if @posts_published %>
+    <h3>Published:</h3>
+    <ul>
+      <% @post_published.each do |post| %>
+        <li><%= post.title %>(<%= link_to "archive" %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @posts_drafted %>
+    <h3>Drafts:</h3>
+    <ul>
+      <% @posts_drafted.each do |post| %>
+        <li><%= post.title %>(<%= link_to "edit", edit_post_path(post) %>)</li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default ' %>
+<%= link_to 'Publish', post_path(@post, {status: :published}), method: :patch, class: 'btn btn-default', data: {confirm: 'Are you sure?'} %>
+
+<%= render 'posts/full_post' %>
+
+<%= link_to 'Edit', edit_post_path(@post) %>

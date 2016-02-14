@@ -1,0 +1,14 @@
+<% steps = {add: "Add job info", preview: "Preview", profit: "Profit"} %>
+<% completed = true %>
+
+<ul class="progress-indicator custom-complex m-b-2">
+  <% steps.each do |step, text| %>
+    <%= content_tag :li, {class: ('completed' if completed)} do %>
+      <span class="bubble"></span><%= text %>
+    <% end %>
+
+    <% if completed == true %>
+      <% completed = current_step != step %>
+    <% end %>
+  <% end %>
+</ul>

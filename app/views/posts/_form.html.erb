@@ -1,0 +1,48 @@
+<%= simple_form_for(@post, html: {class: 'form-horizontal'},
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.input :title, placeholder: 'Senior Frontend/Mobile Developer' %>
+  <%= f.input :location, placeholder: 'Seattle,SF,NY' %>
+  <%= f.input :job_type, as: :radio_buttons, collection: Post.job_type_form_options, item_wrapper_class: 'radio-inline' %>
+  <%= f.input :rate, placeholder: '$120k - $160k DOE' %>
+  <%= f.input :description, placeholder: 'This job is super cool. blah' %>
+  <%= f.input :company_name, placeholder: 'WidgetKing' %>
+  <%= f.input :company_url, placeholder: 'WidgetKing.com' %>
+  <%= f.input :company_logo, placeholder: 'http://www.widgetking.com/url_to_company_logo.png' %>
+  <%= f.input :how_to_apply, as: :radio_buttons, collection: Post.how_to_apply_form_options, item_wrapper_class: 'radio-inline' %>
+  <%= f.input :how_to_apply_address %>
+  <%= f.input :contact_email %>
+
+  <div class="text-xs-right">
+    <%= f.button :submit, 'Preview' %>
+  </div>
+<% end %>
+
+<% if current_user %>
+<% else %>
+  <%= render 'shared/login_signup_modal' %>
+<% end %>
+
+<script>
+  function showSignupModal() {
+    $('#myModal').modal('show')
+  }
+
+  $(function() {
+  <% if current_user %>
+    window.current_user_id = <%= current_user.id %>;
+  <% else %>
+    $('form input').on('focus', function() {
+      showSignupModal()
+    });
+  <% end %>
+  });
+</script>

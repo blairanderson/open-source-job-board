@@ -1,0 +1,31 @@
+<div class="content-well">
+  <h1><%= @post.title %></h1>
+
+  <h3>
+    <%= link_to @post.company_name, @post.company_url, target: "_blank" %>
+    <small class="muted">&middot;&nbsp;<span class="location"><%= @post.location %></span></small>
+  </h3>
+
+  <div>
+    Posted: <%= @post.posted %>
+  </div>
+
+  <div>
+    Job Type: <%= @post.job_type.titleize %>
+  </div>
+
+  <% if @post.categories.present? %>
+    <div>
+      Categories: <%= @post.categories.join(", ") %>
+    </div>
+  <% end %>
+  <hr/>
+  <p>Description:</p>
+  <p><%= @post.description.html_safe %></p>
+
+  <div class="row">
+    <div class="col-xs-6 col-lg-4 pull-xs-right">
+      <%= link_to "Apply to this Job", apply_to_post_path(@post), method: :post, class: "btn btn-large btn-block btn-success" %>
+    </div>
+  </div>
+</div>

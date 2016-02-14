@@ -1,0 +1,12 @@
+<% if notice || alert %>
+  <div class="container">
+    <div class="col-xs-12">
+      <% if notice %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

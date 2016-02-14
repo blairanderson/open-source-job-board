@@ -1,0 +1,14 @@
+<% content_for :sidebar do %>
+  <div class="content-well p-x-2 p-y-2">
+    <span><%= @settings.fetch('sidebar.cta_helper') %></span>
+    <%= link_to 'New Post', new_post_path, class: "btn btn-block btn-large btn-info" %>
+  </div>
+  <% if @post.company_logo %>
+    <p>This posting provided by <%= @post.company_name %></p>
+    <div class="company-logo">
+      <%= image_tag(@post.company_logo, class: 'img-fluid') %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render 'posts/full_post' %>
