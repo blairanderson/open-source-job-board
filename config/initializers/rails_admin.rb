@@ -13,7 +13,10 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user.is_admin?
   end
 
-  config.main_app_name = Proc.new { [Setting.find_by_name('site.title').value, 'Admin'] }
+  config.main_app_name = Proc.new do
+    site_name = Setting.find_by_name('site.title').try(:value) || "site.title"
+    [site_name, 'Admin']
+  end
   ## == Cancan ==
   # config.authorize_with :cancan
 

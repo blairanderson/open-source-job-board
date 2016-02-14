@@ -119,7 +119,7 @@ class PostsController < ApplicationController
   def require_user_owns_post
     raise "Not found" unless @post
     raise "Not found" unless current_user
-    raise "Not Found" unless @post.user.id == current_user.id
+    raise "Not Found" unless @post.user_id == current_user.id
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

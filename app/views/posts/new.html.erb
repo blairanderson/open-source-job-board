@@ -8,7 +8,7 @@
   <% if @posts_published.any? %>
     <h3>Published:</h3>
     <ul>
-      <% @post_published.each do |post| %>
+      <% @posts_published.each do |post| %>
         <li><%= post.title %>(<%= link_to "archive" %>)</li>
       <% end %>
     </ul>
