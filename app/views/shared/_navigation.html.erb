@@ -11,8 +11,10 @@
     </ul>
   </div>
 </nav>
-<div style="background: #05A5D1;padding: 50px 0;">
-  <h1 style="text-align: center;"><%= link_to site_title, root_path, style: "color: #FDF3E7;font-weight: 300;" %></h1>
+<div style="background: <%= @settings.fetch('header.background_color') || '#05A5D1' %>;padding: 50px 0;">
+  <h1 style="text-align: center;">
+    <%= link_to site_title, root_path, style: "color: #{@settings.fetch('header.color')|| '#FDF3E7' };font-weight: 300;" %>
+  </h1>
 </div>
 <nav class="navbar navbar-full navbar-dark bg-inverse">
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
