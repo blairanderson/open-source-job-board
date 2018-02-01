@@ -3,9 +3,23 @@
   "description": "This app acts as a job board.",
   "keywords": [
     "rails",
+    "ruby",
     "job board",
     "open source"
   ],
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
   "website": "http://blairanderson.github.io/open-source-job-board",
   "repository": "https://github.com/blairanderson/open-source-job-board",
+  "env": {
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret",
+      "required": true
+    }
+  },
+  "scripts": {
+    "postdeploy": "rake db:migrate"
+  }
 }
