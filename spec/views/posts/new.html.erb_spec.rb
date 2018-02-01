@@ -22,13 +22,11 @@ RSpec.describe "posts/new", type: :view do
 
     assert_select "form[action=?][method=?]", posts_path, "post" do
 
-      assert_select "input#post_user_id[name=?]", "post[user_id]"
-
       assert_select "input#post_title[name=?]", "post[title]"
 
       assert_select "input#post_location[name=?]", "post[location]"
 
-      assert_select "input#post_job_type[name=?]", "post[job_type]"
+      assert_select "input#post_job_type_full_time[name=?]", "post[job_type]"
 
       assert_select "textarea#post_description[name=?]", "post[description]"
 
@@ -38,7 +36,7 @@ RSpec.describe "posts/new", type: :view do
 
       assert_select "input#post_company_logo[name=?]", "post[company_logo]"
 
-      assert_select "input#post_how_to_apply[name=?]", "post[how_to_apply]"
+      assert_select "input#post_how_to_apply_apply_by_url[name=?]", "post[how_to_apply]"
 
       assert_select "input#post_how_to_apply_address[name=?]", "post[how_to_apply_address]"
 
