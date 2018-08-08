@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - 2.5
+before_install: gem update --system
+install: bundle install
+cache: bundler
+env:
+  - DATABASE_URL=postgres://postgres@localhost/postgres
+services:
+  - postgresql
+addons:
+  postgresql: 9.6
+before_script:
+  - RAILS_ENV=test bundle exec rake db:migrate
+matrix:
+  allow_failures:
+    - rvm: 2.4
+    - rvm: 2.5

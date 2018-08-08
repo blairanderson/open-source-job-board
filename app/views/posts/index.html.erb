@@ -17,7 +17,7 @@
 </div>
 <% content_for :sidebar do %>
   <div class="content-well p-x-2 p-y-2">
-    <span><%= @settings.fetch('sidebar.cta_helper') %></span>
+    <span><%= @settings && @settings.fetch('sidebar.cta_helper') %></span>
     <%= link_to 'New Post', new_post_path, class: "btn btn-block btn-large btn-info" %>
   </div>
 <% end %>

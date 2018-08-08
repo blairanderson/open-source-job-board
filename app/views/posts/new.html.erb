@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-  <% if @posts_published.any? %>
+  <% if @posts_published.present? && @posts_published.any? %>
     <h3>Published:</h3>
     <ul>
       <% @posts_published.each do |post| %>
@@ -14,7 +14,7 @@
     </ul>
   <% end %>
 
-  <% if @posts_drafted.any? %>
+  <% if @posts_drafted.present? && @posts_drafted.any? %>
     <h3>Your Drafts:</h3>
     <ul>
       <% @posts_drafted.each do |post| %>
