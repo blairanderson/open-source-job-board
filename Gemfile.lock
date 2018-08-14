@@ -298,3 +298,9 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   validates_formatting_of
+
+RUBY VERSION
+   ruby 2.5.1p57
+
+BUNDLED WITH
+   1.16.1
