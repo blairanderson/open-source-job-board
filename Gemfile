@@ -1,11 +1,24 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
+ruby '2.3.1'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 4.2'
+gem 'puma', '~> 3.0'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.15'
+gem 'bootsnap', require: false
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
 gem 'rails_admin'
-gem 'rails_12factor', group: :production
-gem 'pg'
+
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -13,25 +26,28 @@ gem 'jquery-rails'
 
 gem 'active_model_serializers'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'bundler'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap'
 # bootstrap requires tether
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
-gem 'devise'
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-tether', '>= 1.1.0'
+# end
+
 gem 'google-analytics-rails'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-auth0', '~> 2.2'
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'quiet_assets'
 gem 'rack-cors'
 gem 'simple_form'
-gem 'spring',        group: :development
 gem 'turbolinks'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development do
+  gem 'spring'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'better_errors'
@@ -40,7 +56,7 @@ end
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
 end
 
 group :test do

@@ -11,7 +11,10 @@
   <meta property="og:image" content="https://facebook.github.io/react/img/logo_og.png">
   <meta property="og:description" content="<%= site_description %>">
 
+  <%= stylesheet_link_tag("https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css") %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://unpkg.com/tether@0.7.2/tether.min.js' %>
+  <%= javascript_include_tag 'https://unpkg.com/bootstrap@4.1.0/dist/js/bootstrap.min.js' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? or Rails.env.development? %>
@@ -24,11 +27,10 @@
     <%= yield :header %>
   </div>
   <div class="row">
-    <div class="col-sm-4 col-sm-push-8">
+    <div class="col-sm-4 order-last">
       <%= yield :sidebar %>
     </div>
-
-    <div class="col-sm-8 col-sm-pull-4">
+    <div class="col-sm-8  order-first">
       <div class="">
         <%= yield %>
       </div>

@@ -1,16 +1,24 @@
-<nav class="nav nav-utility">
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-utility">
   <div class="container">
-    <ul class="nav navbar-nav pull-xs-right">
-      <% if current_user && current_user.is_admin? %>
-        <li class="nav-item">
-          <%= link_to "Admin Dashboard", RailsAdmin::Engine.routes.url_helpers.dashboard_path, class: "nav-link" %>
-        </li>
-      <% end %>
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
+    <%= link_to site_title, root_path, class: "navbar-brand", style: "padding-top: 0 !important; padding:bottom: 0 !important;" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav justify-content-end">
+        <% if current_user && current_user.is_admin? %>
+          <li class="nav-item">
+            <%= link_to "Admin Dashboard", RailsAdmin::Engine.routes.url_helpers.dashboard_path, class: "nav-link" %>
+          </li>
+        <% end %>
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </ul>
+    </div>
   </div>
 </nav>
+
+
 <div style="background: <%= @settings.fetch('header.background_color') || '#05A5D1' %>;padding: 50px 0;">
   <h1 style="text-align: center;">
     <%= link_to site_title, root_path, style: "color: #{@settings.fetch('header.color')|| '#FDF3E7' };font-weight: 300;" %>
@@ -28,7 +36,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </nav>
 <% if notice || alert %>
