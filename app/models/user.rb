@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   has_many :posts
 
   def is_admin?
-    id == 1 || email == "blair81@gmail.com"
+    id == 1 || email.in?(ENV.fetch("ADMIN_EMAIL").split(","))
   end
 end

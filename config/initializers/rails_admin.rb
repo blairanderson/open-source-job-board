@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
   config.authenticate_with do
-    current_user_is_admin!
+    session[:userinfo].dig("info", "email").in?(ENV.fetch("ADMIN_EMAIL").split(",").compact)
   end
 
   config.current_user_method(&:current_user)
