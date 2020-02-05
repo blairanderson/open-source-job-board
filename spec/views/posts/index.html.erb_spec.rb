@@ -10,11 +10,11 @@ RSpec.describe "posts/index", type: :view do
         :job_type => 1,
         :description => "MyText",
         :company_name => "Company Name",
-        :company_url => "Company Url",
+        :company_url => "https://example.com",
         :company_logo => "Company Logo",
-        :how_to_apply => 2,
+        :how_to_apply => "apply_by_email",
         :how_to_apply_address => "How To Apply Address",
-        :contact_email => "Contact Email"
+        :contact_email => "acme_corp@example.com"
       ),
       Post.create!(
         :user => nil,
@@ -23,27 +23,19 @@ RSpec.describe "posts/index", type: :view do
         :job_type => 1,
         :description => "MyText",
         :company_name => "Company Name",
-        :company_url => "Company Url",
+        :company_url => "https://example.com",
         :company_logo => "Company Logo",
-        :how_to_apply => 2,
+        :how_to_apply => "apply_by_email",
         :how_to_apply_address => "How To Apply Address",
-        :contact_email => "Contact Email"
+        :contact_email => "acme_corp@example.com"
       )
     ])
   end
 
   it "renders a list of posts" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "Location".to_s, :count => 2
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "Company Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Company Url".to_s, :count => 2
-    assert_select "tr>td", :text => "Company Logo".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "How To Apply Address".to_s, :count => 2
-    assert_select "tr>td", :text => "Contact Email".to_s, :count => 2
+    assert_select "div>h2", :text => "Title".to_s, :count => 2
+    assert_select "div>h4", :text => "Location".to_s, :count => 2
+    assert_select "div>h3", :text => "Company Name".to_s, :count => 2
   end
 end

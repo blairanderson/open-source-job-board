@@ -1,5 +1,8 @@
 # Open Source Job Board
 
+[![Open Source Helpers](https://www.codetriage.com/blairanderson/open-source-job-board/badges/users.svg)](https://www.codetriage.com/blairanderson/open-source-job-board)
+[![Build Status](https://travis-ci.org/blairanderson/open-source-job-board.svg?branch=master)](https://travis-ci.org/blairanderson/open-source-job-board)
+
 **[DEMO](https://reactnativejobs.herokuapp.com/)**
 
 ![Screenshot](https://cdn.rawgit.com/blairanderson/open-source-job-board/master/public/screenshot.png)

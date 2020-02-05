@@ -15,7 +15,6 @@ gem 'puma', '~> 3.0'
 gem 'pg', '~> 0.15'
 gem 'bootsnap', require: false
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails_admin'
 

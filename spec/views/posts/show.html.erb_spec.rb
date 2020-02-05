@@ -9,11 +9,11 @@ RSpec.describe "posts/show", type: :view do
       :job_type => 1,
       :description => "MyText",
       :company_name => "Company Name",
-      :company_url => "Company Url",
+      :company_url => "https://example.com",
       :company_logo => "Company Logo",
-      :how_to_apply => 2,
+      :how_to_apply => "apply_by_email",
       :how_to_apply_address => "How To Apply Address",
-      :contact_email => "Contact Email"
+      :contact_email => "acme_corp@example.com"
     ))
   end
 
@@ -25,10 +25,6 @@ RSpec.describe "posts/show", type: :view do
     expect(rendered).to match(/1/)
     expect(rendered).to match(/MyText/)
     expect(rendered).to match(/Company Name/)
-    expect(rendered).to match(/Company Url/)
-    expect(rendered).to match(/Company Logo/)
-    expect(rendered).to match(/2/)
-    expect(rendered).to match(/How To Apply Address/)
-    expect(rendered).to match(/Contact Email/)
+    expect(rendered).to match(/https:\/\/example.com/)
   end
 end
