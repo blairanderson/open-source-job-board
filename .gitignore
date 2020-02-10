@@ -18,3 +18,10 @@
 #->Prelang (env_variables:dotenv)
 # Ignore .env file so sensitive environment variables are not checked into Git.
 .env
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
