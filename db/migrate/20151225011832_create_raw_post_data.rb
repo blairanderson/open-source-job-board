@@ -1,4 +1,4 @@
-class CreateRawPostData < ActiveRecord::Migration
+class CreateRawPostData < ActiveRecord::Migration[4.2]
   def change
     create_table :raw_post_data do |t|
       t.integer :source

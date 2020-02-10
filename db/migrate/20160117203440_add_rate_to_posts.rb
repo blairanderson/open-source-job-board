@@ -1,4 +1,4 @@
-class AddRateToPosts < ActiveRecord::Migration
+class AddRateToPosts < ActiveRecord::Migration[4.2]
   def change
     add_column :posts, :published_at, :datetime
     add_column :posts, :rate, :string
