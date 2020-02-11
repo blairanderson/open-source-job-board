@@ -1,5 +1,5 @@
 RailsAdmin.config do |config|
-
+  config.parent_controller = '::ApplicationController'
   ### Popular gems integration
 
   ## == Devise ==

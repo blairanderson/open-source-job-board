@@ -1,7 +1,7 @@
 
 namespace :fetch do
   task stackoverflow: [:environment] do
-    Fetchers::Stackoverflow.run
+    # Fetchers::Stackoverflow.run
   end
 
 
