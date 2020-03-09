@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :user_signed_in?
 
   def current_user_is_admin!
-      current_user && current_user.email.in?(ENV.fetch("ADMIN_EMAIL").split(','))
+    current_user && current_user.email.in?(ENV.fetch("ADMIN_EMAIL").split(','))
   end
 
   def current_user

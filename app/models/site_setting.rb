@@ -7,10 +7,7 @@ class SiteSetting
             .with_indifferent_access rescue {}
   end
 
-  def fetch(key=false)
-    if key == false
-      raise('COMMMMMONNNN PERSON!')
-    end
+  def fetch(key)
     if result = data[key]
       result
     else

@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 default_settings = [
-  {name: "site.title", value: "Open Source Job Board"},
-  {name: "site.description", value: "HOW META! Open Source Job Board for Open Source Jobs!"},
+  # {name: "site.title", value: "Open Source Job Board"},
+  # {name: "site.description", value: "HOW META! Open Source Job Board for Open Source Jobs!"},
   {name: "header.background_color", value: "#05A5D1"},
   {name: "header.color", value: "#FDF3E7"},
   {name: "sidebar.cta_helper", value: "Find Open Source Talent! We'd love to help you find your person!"},
