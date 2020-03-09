@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'logout' => 'logout#logout'
+  delete 'logout' => 'logout#logout'
   get 'auth/auth0/callback' => 'auth0#callback'
   get 'auth/failure' => 'auth0#failure'
 
