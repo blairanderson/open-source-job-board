@@ -25,16 +25,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @posts_published  = current_user.posts.published rescue []
-    @posts_drafted    = current_user.posts.draft rescue []
-    @post             = Post.new({job_type: 0,how_to_apply: 0})
+    @posts_published = current_user.posts.published rescue []
+    @posts_drafted = current_user.posts.draft rescue []
+    @post = Post.new({job_type: 0, how_to_apply: 0})
   end
 
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
     if current_user
@@ -48,8 +46,8 @@ class PostsController < ApplicationController
         format.json { render :show, status: :created, location: @post }
       else
         format.html do
-          @posts_published  = current_user.posts.published rescue []
-          @posts_drafted    = current_user.posts.draft rescue []
+          @posts_published = current_user.posts.published rescue []
+          @posts_drafted = current_user.posts.draft rescue []
           render :new
         end
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -57,21 +55,19 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
-    if params[:status] && params[:status].in?(Post.statuses.keys)
-      respond_to do |format|
-        if @post.send("#{params[:status]}!")
-          format.html { redirect_to post_path(@post), notice: 'Success!' }
-          format.json { render :show, status: :ok, location: @post }
-        else
-          format.html { render :preview }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
+  def publish
+    respond_to do |format|
+      if @post.published!
+        format.html { redirect_to post_path(@post), notice: 'Success!' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { redirect_to preview_posts_path(@post), notice: @post.errors }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
-      return
-    #   YOLO: move this to another action
     end
+  end
 
+  def update
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to preview_post_path(@post), notice: 'Preview' }

@@ -24,8 +24,8 @@
   <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-default ' %>
-<%= link_to 'Publish', post_path(@post, {status: :published}), method: :patch, class: 'btn btn-default', data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-secondary ' %>
+<%= link_to 'Publish', publish_post_path(@post), method: :post, class: 'btn btn-primary', data: {confirm: 'Are you sure?'} %>
 
 <%= render 'posts/full_post' %>
 

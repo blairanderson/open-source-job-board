@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
-      get "vote"
-      get "preview"
-      post "apply_to"
+      post :publish
+      post :unpublish
+      get :vote
+      get :preview
+      post :apply_to
     end
   end
 
