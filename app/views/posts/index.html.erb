@@ -1,4 +1,5 @@
 <%= render(partial: @posts) || render_hero_suggestion %>
+
 <% content_for :sidebar do %>
   <div class="content-well p-x-2 p-y-2">
     <span><%= @settings.fetch('sidebar.cta_helper') %></span>
