@@ -2,7 +2,7 @@ title: Open Source Job Board
 description: An Open Source Job Board built with Ruby on Rails
 google_analytics: UA-61052500-1
 show_downloads: true
-theme: jekyll-theme-merlot
+theme: jekyll-theme-cayman
 
 gems:
   - jekyll-mentions
