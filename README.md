@@ -3,11 +3,9 @@
 [![Open Source Helpers](https://www.codetriage.com/blairanderson/open-source-job-board/badges/users.svg)](https://www.codetriage.com/blairanderson/open-source-job-board)
 [![Build Status](https://travis-ci.org/blairanderson/open-source-job-board.svg?branch=master)](https://travis-ci.org/blairanderson/open-source-job-board)
 
-**[DEMO](https://reactnativejobs.herokuapp.com/)**
+**[DEMO](https://www.fbajobs.com/)**
 
 ![Screenshot](https://cdn.rawgit.com/blairanderson/open-source-job-board/master/public/screenshot.png)
-
-This is the `readme.md` for a Ruby on Rails application that allows users to create accounts and post job listings.
 
 ### Why?
 
@@ -16,18 +14,6 @@ Because when i was learning to program, I wanted to play with code that had a fa
 The problem with learning to code is the learning-curve. Shit is real and painful and i found that the best cure for the pain was cloning an app with features and tweaking until it broke and learning along the way.
 
 I think this is why wordpress is SO popular. Its stupid-easy to fire-up, and changes come with one-click package installs and tiny code changes.
-
-
-
-### Features
-
-- A visitor can view the list of job posts
-- A visitor can view the job form, but is forced to signup before filling it out.
-- A visitor can register for an account
-- A user can login and logout
-- A user can submit a new job post
-- Admin dashboard at `/admin`, config in `rails_admin.rb` - admin is `user.id==1`
-- Posts can be `draft, published, archived`
 
 
 ### Deploy?
