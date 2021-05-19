@@ -169,7 +169,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -207,7 +209,8 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.1.2)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -351,7 +354,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 0.1)
   pg (~> 0.15)
   pry-rails
-  puma (~> 3.0)
+  puma (~> 4.3)
   rack-cors
   rails (~> 5.0)
   rails_12factor
